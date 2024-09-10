@@ -1,13 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Link, router } from 'expo-router';
+import { Button, SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>:D</Text>
-      <Text>yey</Text>
-      <StatusBar style="dark" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <Button onPress={()=> router.push('(tabs)/home')} title='Home'/>
+        <Button onPress={()=> router.push('(tabs)/actores')} title='Actores'/>
+        <Button onPress={()=> router.push('(tabs)/series')} title='Series'/>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
