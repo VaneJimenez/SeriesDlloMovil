@@ -1,13 +1,15 @@
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:3613121419.
 import { Link, router } from 'expo-router';
-import { Button, SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';
+import CustomButton from '../components/CustomButton';
+import { SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Button onPress={()=> router.push('(tabs)/home')} title='Home'/>
-        <Button onPress={()=> router.push('(tabs)/actores')} title='Actores'/>
-        <Button onPress={()=> router.push('(tabs)/series')} title='Series'/>
+        <CustomButton title='Home' handlePress={() => router.push('(tabs)/home')}
+          containerStyles={styles.container} textStyles={styles.text} />
+
       </ScrollView>
     </SafeAreaView>
   );
@@ -20,4 +22,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text: {
+    color: 'black',
+    fontSize: 20,
+    fontWeight: 'bold',
+  }
 });
