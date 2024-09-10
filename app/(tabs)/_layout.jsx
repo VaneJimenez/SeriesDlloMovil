@@ -1,4 +1,4 @@
-import { home } from '../../assets/icons/home.jpeg';
+import { home } from '../../assets/icons/home.png';
 import React from 'react'
 import { Tabs } from 'expo-router'
 import { Image, Text, View } from 'react-native';
@@ -52,11 +52,81 @@ const TabsLayout = () => {
                         )
                     }}
                 />
-                <Tabs.Screen name='actores' options={{ title: 'Actores' }} />
-                <Tabs.Screen name='series' options={{ title: 'Series' }} />
-
-
-
+                <Tabs.Screen
+                    name='series'
+                    options={{
+                        title: 'Series',
+                        headerShown: false,
+                        tabBarIcon: ({ color, focused }) => (
+                            <TabIcon
+                                icon={home}
+                                color={color}
+                                name='series'
+                                focused={focused}
+                            />
+                        )
+                    }}
+                />
+                <Tabs.Screen
+                    name='actores'
+                    options={{
+                        title: 'Actores',
+                        headerShown: false,
+                        tabBarIcon: ({ color, focused }) => (
+                            <TabIcon
+                                icon={home}
+                                color={color}
+                                name='actores'
+                                focused={focused}
+                            />
+                        )
+                    }}
+                />
+                <Tabs.Screen
+                    name='directores'
+                    options={{
+                        title: 'Directores',
+                        headerShown: false,
+                        tabBarIcon: ({ color, focused }) => (
+                            <TabIcon
+                                icon={home}
+                                color={color}
+                                name='directores'
+                                focused={focused}
+                            />
+                        )
+                    }}
+                />
+                <Tabs.Screen
+                    name='plataforma'
+                    options={{
+                        title: 'Plataforma',
+                        headerShown: false,
+                        tabBarIcon: ({ color, focused }) => (
+                            <TabIcon
+                                icon={home}
+                                color={color}
+                                name='plataforma'
+                                focused={focused}
+                            />
+                        )
+                    }}
+                />
+                <Tabs.Screen
+                    name='idiomas'
+                    options={{
+                        title: 'Idiomas',
+                        headerShown: false,
+                        tabBarIcon: ({ color, focused }) => (
+                            <TabIcon
+                                icon={home}
+                                color={color}
+                                name='idiomas'
+                                focused={focused}
+                            />
+                        )
+                    }}
+                />
             </Tabs>
         </>
     )

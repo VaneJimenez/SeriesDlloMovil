@@ -7,9 +7,8 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <CustomButton title='Home' handlePress={() => router.push('(tabs)/home')}
+        <CustomButton title='Comenzar' handlePress={() => router.push('(tabs)/home')}
           containerStyles={styles.container} textStyles={styles.text} />
-
       </ScrollView>
     </SafeAreaView>
   );

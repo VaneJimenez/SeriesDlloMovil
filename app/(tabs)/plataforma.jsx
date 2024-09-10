@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import { Button, Text, TextInput, View } from "react-native";
+import { View, Text, Button, TextInput } from 'react-native'
+import React, { useState } from 'react'
 
-export const Plataforma = () => {
-
-
-    const [idPlataforma, setIdPlataforma] = useState('');
+const plataforma = () => {
+  const [idPlataforma, setIdPlataforma] = useState('');
     const [nombre, setNombre] = useState('');
 
     const agregarPlataforma = () => {
@@ -37,3 +35,5 @@ export const Plataforma = () => {
         </View>
     )
 }
+
+export default plataforma
