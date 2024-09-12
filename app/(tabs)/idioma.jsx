@@ -1,15 +1,13 @@
 import { View, Text, Button, TextInput } from 'react-native'
 import React, { useState } from 'react'
 
-const idiomas = () => {
-  const [idIdioma, setIdIdioma] = useState('');
+const idioma = () => {
   const [nombre, setNombre] = useState('');
   const [isoCode, setIsoCode] = useState('');
 
 
   const agregarIdioma = () => {
-    if (idIdioma && nombre && isoCode) {
-      setIdIdioma('')
+    if (nombre && isoCode) {
       setNombre('')
       setIsoCode('')
     }
@@ -21,12 +19,6 @@ const idiomas = () => {
       <Text>
         Agregar Idioma
       </Text>
-
-      <TextInput
-        placeholder='id'
-        value={idIdioma}
-        onChangeText={text => setIdIdioma(text)}
-      />
       <TextInput
         placeholder='Nombre'
         value={nombre}
@@ -38,10 +30,10 @@ const idiomas = () => {
         onChangeText={text => setIsoCode(text)}
       />
 
-      <Button title="Agregar idioma" onPress={agregarIdioma} />
+      <Button title="Agregar" onPress={agregarIdioma} />
 
     </View>
   )
 }
 
-export default idiomas
+export default idioma

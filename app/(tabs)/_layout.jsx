@@ -68,7 +68,7 @@ const TabsLayout = () => {
                     }}
                 />
                 <Tabs.Screen
-                    name='actores'
+                    name='actor'
                     options={{
                         title: 'Actores',
                         headerShown: false,
@@ -76,14 +76,14 @@ const TabsLayout = () => {
                             <TabIcon
                                 icon={home}
                                 color={color}
-                                name='actores'
+                                name='actor'
                                 focused={focused}
                             />
                         )
                     }}
                 />
                 <Tabs.Screen
-                    name='directores'
+                    name='director'
                     options={{
                         title: 'Directores',
                         headerShown: false,
@@ -91,7 +91,7 @@ const TabsLayout = () => {
                             <TabIcon
                                 icon={home}
                                 color={color}
-                                name='directores'
+                                name='director'
                                 focused={focused}
                             />
                         )
@@ -113,7 +113,7 @@ const TabsLayout = () => {
                     }}
                 />
                 <Tabs.Screen
-                    name='idiomas'
+                    name='idioma'
                     options={{
                         title: 'Idiomas',
                         headerShown: false,
@@ -121,7 +121,7 @@ const TabsLayout = () => {
                             <TabIcon
                                 icon={home}
                                 color={color}
-                                name='idiomas'
+                                name='idioma'
                                 focused={focused}
                             />
                         )

@@ -2,20 +2,16 @@ import { View, Text, Button, TextInput } from 'react-native'
 import React, { useState } from 'react'
 
 const series = () => {
-  const [idSerie, setIdSerie] = useState('');
-  const [titulo, setTitulo] = useState('');
+  const [tituloSerie, setTituloSerie] = useState('');
   const [anho, setAnho] = useState('');
-  const [capitulos, setCapitulos] = useState('');
   const [idDirector, setIdDirector] = useState('');
   const [idPlataforma, setIdPlataforma] = useState('');
 
 
   const agregarSerie = () => {
-    if (idSerie && titulo && anho && capitulos && idDirector && idPlataforma) {
-      setIdSerie('')
-      setTitulo('')
+    if (tituloSerie && anho && idDirector && idPlataforma) {
+      setTituloSerie('')
       setAnho('')
-      setCapitulos('')
       setIdDirector('')
       setIdPlataforma('')
     }
@@ -27,26 +23,15 @@ const series = () => {
       <Text>
         Agregar Serie
       </Text>
-
-      <TextInput
-        placeholder='id'
-        value={idSerie}
-        onChangeText={text => setIdSerie(text)}
-      />
       <TextInput
         placeholder='Título'
-        value={titulo}
-        onChangeText={text => setTitulo(text)}
+        value={tituloSerie}
+        onChangeText={text => setTituloSerie(text)}
       />
       <TextInput
         placeholder='Año'
         value={anho}
         onChangeText={text => setAnho(text)}
-      />
-      <TextInput
-        placeholder='Capítulos'
-        value={capitulos}
-        onChangeText={text => setCapitulos(text)}
       />
       <TextInput
         placeholder='id del Director'

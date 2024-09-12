@@ -2,13 +2,11 @@ import { View, Text, Button, TextInput } from 'react-native'
 import React, { useState } from 'react'
 
 const plataforma = () => {
-  const [idPlataforma, setIdPlataforma] = useState('');
-    const [nombre, setNombre] = useState('');
+    const [plataforma, setPlataforma] = useState('');
 
     const agregarPlataforma = () => {
-        if (idPlataforma && nombre) {
-            setIdPlataforma('')
-            setNombre('')
+        if (plataforma) {
+            setPlataforma('')
         }
     }
 
@@ -20,17 +18,12 @@ const plataforma = () => {
             </Text>
 
             <TextInput
-                placeholder='id'
-                value={idPlataforma}
-                onChangeText={text => setIdPlataforma(text)}
-            />
-            <TextInput
-                placeholder='Nombre'
-                value={nombre}
-                onChangeText={text => setNombre(text)}
+                placeholder='Plataforma'
+                value={plataforma}
+                onChangeText={text => setPlataforma(text)}
             />
 
-            <Button title="Agregar plataforma" onPress={agregarPlataforma} />
+            <Button title="Agregar" onPress={agregarPlataforma} />
 
         </View>
     )

@@ -1,4 +1,4 @@
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:3613121419.
+import 'react-native-url-polyfill/auto'
 import { Link, router } from 'expo-router';
 import CustomButton from '../components/CustomButton';
 import { SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';

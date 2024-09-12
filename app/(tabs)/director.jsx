@@ -1,16 +1,14 @@
 import { View, Text, Button, TextInput } from 'react-native'
 import React, { useState } from 'react'
 
-const directores = () => {
-  const [idDirector, setIdDirector] = useState('');
+const director = () => {
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
   const [nacionalidad, setNacionalidad] = useState('');
   const [fechaNacimiento, setFechaNacimiento] = useState('');
 
   const agregarDirector = () => {
-    if (idDirector && nombre && apellido && nacionalidad && fechaNacimiento) {
-      setIdDirector('')
+    if (nombre && apellido && nacionalidad && fechaNacimiento) {
       setNombre('')
       setApellido('')
       setNacionalidad('')
@@ -23,12 +21,6 @@ const directores = () => {
       <Text>
         Agregar Director
       </Text>
-
-      <TextInput
-        placeholder='id'
-        value={idDirector}
-        onChangeText={text => setIdDirector(text)}
-      />
       <TextInput
         placeholder='Nombre'
         value={nombre}
@@ -55,4 +47,4 @@ const directores = () => {
   )
 }
 
-export default directores
+export default director
