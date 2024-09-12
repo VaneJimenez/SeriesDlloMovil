@@ -10,7 +10,7 @@ const CustomButton = ({
 }) => {
     return (
         <TouchableOpacity onPress={handlePress}
-            activeOpacity={0.7}
+            activeOpacity={0.2}
             disabled={isLoading}
             style={[styles.container, containerStyles]}>
             <Text style={[styles.text, textStyles]}>{title}</Text>
@@ -23,9 +23,13 @@ export default CustomButton
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#fff',
-        width: '100%',
+        flex: 1,
+        display: 'flex',
+        justifyContent: 'space-around',
+        width: 140,
         height: 50,
+        alignItems: 'stretch',
+        width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 10,

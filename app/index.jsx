@@ -1,15 +1,23 @@
 import 'react-native-url-polyfill/auto'
-import { Link, router } from 'expo-router';
+import { router } from 'expo-router';
 import CustomButton from '../components/CustomButton';
-import { SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';
+import { ImageBackground, SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';
+//import { bg } from '../assets/img/bg.jpg';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <CustomButton title='Comenzar' handlePress={() => router.push('(tabs)/home')}
-          containerStyles={styles.container} textStyles={styles.text} />
-      </ScrollView>
+      <ImageBackground
+        source={require('../assets/img/bg.jpg')}
+        resizeMode='cover'
+        style={{ width: '100%', height: '100%' }}
+      >
+        <ScrollView contentContainerStyle={styles.container}>
+          <Text style={styles.text}>SeriesDM</Text>
+          <CustomButton title='Comenzar' handlePress={() => router.push('(tabs)/home')}
+            styls={styles.text} />
+        </ScrollView>
+      </ImageBackground>
     </SafeAreaView>
   );
 }
@@ -17,14 +25,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'pink',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
-    justifyContent: 'center',
   },
   text: {
-    borderWidth: 2,
-    borderColor: 'black',
-    color: 'purple',
+    color: 'blue',
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
