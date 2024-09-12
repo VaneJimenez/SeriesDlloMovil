@@ -1,17 +1,40 @@
-import { View, Text, Button, TextInput } from 'react-native'
-import React, { useState } from 'react'
+import { Text, Button, TextInput, FlatList, ScrollView } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { supabase } from '../../lib/supa'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const plataforma = () => {
-    const [plataforma, setPlataforma] = useState('');
+
+    const [plataforma, setPlataforma] = useState([])
+
+    const [nombrePlataforma, setNombrePlataforma] = useState('');
 
     const agregarPlataforma = () => {
-        if (plataforma) {
-            setPlataforma('')
+        if (nombrePlataforma) {
+            supabase.from('plataforma').insert({
+                nombreplataforma: nombrePlataforma
+            }).then(() => {
+                setNombrePlataforma('');
+            }).catch(error => {
+                console.log(error)
+            })
         }
     }
 
+    useEffect(() => {
+        const fetchPlataforma = async () => {
+            const { data, error } = await supabase.from('plataforma').select('*')
+            if (error) {
+                console.log(error)
+                return;
+            }
+            setPlataforma(data)
+        };
+        fetchPlataforma();
+    }, [])
+
     return (
-        <View>
+        <SafeAreaView>
 
             <Text>
                 Agregar Plataforma
@@ -19,13 +42,23 @@ const plataforma = () => {
 
             <TextInput
                 placeholder='Plataforma'
-                value={plataforma}
-                onChangeText={text => setPlataforma(text)}
+                value={nombrePlataforma}
+                onChangeText={text => setNombrePlataforma(text)}
             />
 
             <Button title="Agregar" onPress={agregarPlataforma} />
 
-        </View>
+            <FlatList
+                data={plataforma}
+                keyExtractor={item => item.plataformaid}
+                renderItem={({ item }) => (
+                    <ScrollView>
+                        <Text>{item.nombreplataforma}</Text>
+                    </ScrollView>
+                )}
+            />
+
+        </SafeAreaView>
     )
 }
 

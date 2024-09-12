@@ -1,4 +1,4 @@
-import { View, Text, Button, TextInput, FlatList, ScrollView } from 'react-native'
+import { Text, Button, TextInput, FlatList, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supa'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -33,12 +33,10 @@ const actor = () => {
     useEffect(() => {
         const fetchActor = async () => {
             const { data, error } = await supabase.from('actor').select('*')
-
             if (error) {
                 console.log(error)
                 return;
             }
-
             setActor(data)
         };
         fetchActor();
@@ -73,6 +71,7 @@ const actor = () => {
             />
 
             <Button title="Agregar actor" onPress={agregarActor} />
+
             <FlatList
                 data={actor}
                 keyExtractor={item => item.actorid}

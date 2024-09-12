@@ -17,13 +17,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
-    color: 'black',
+    borderWidth: 2,
+    borderColor: 'black',
+    color: 'purple',
     fontSize: 20,
     fontWeight: 'bold',
+    textAlign: 'center',
   }
 });
