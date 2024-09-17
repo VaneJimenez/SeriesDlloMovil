@@ -3,13 +3,13 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ]
-    }
+      // ...
+      "@/*": ["./src/*"] // Add relative path
+    },
   },
   "include": [
     "**/*.ts",
     "**/*.tsx"
 , "app/index.jsx"  ]
+
 }

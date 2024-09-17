@@ -44,7 +44,6 @@ const actor = () => {
 
     return (
         <SafeAreaView>
-
             <Text>
                 Agregar Actor
             </Text>

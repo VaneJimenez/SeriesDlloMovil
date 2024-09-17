@@ -2,23 +2,22 @@ import 'react-native-url-polyfill/auto'
 import { router } from 'expo-router';
 import CustomButton from '../components/CustomButton';
 import { ImageBackground, SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';
-//import { bg } from '../assets/img/bg.jpg';
+import { GluestackUIProvider } from '../components/gluestack-ui-provider';
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
+    <GluestackUIProvider style={styles.container}>
       <ImageBackground
         source={require('../assets/img/bg.jpg')}
         resizeMode='cover'
         style={{ width: '100%', height: '100%' }}
       >
         <ScrollView contentContainerStyle={styles.container}>
-          <Text style={styles.text}>SeriesDM</Text>
           <CustomButton title='Comenzar' handlePress={() => router.push('(tabs)/home')}
-            styls={styles.text} />
+            styles={styles.text} />
         </ScrollView>
       </ImageBackground>
-    </SafeAreaView>
+    </GluestackUIProvider>
   );
 }
 

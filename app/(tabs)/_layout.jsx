@@ -8,12 +8,9 @@ const TabIcon = ({ icon, color, name, focused }) => {
         <View>
             <Image
                 source={icon}
-                resizeMode='contain'
-                tintColor={color}
                 style={{
                     width: 24,
                     height: 24,
-                    tintColor: color,
                 }}
             />
             <Text style={{ color: color }}>
@@ -28,12 +25,12 @@ const TabsLayout = () => {
         <>
             <Tabs screenOptions={{
                 tabBarShowLabel: false,
-                tabBarActiveTintColor: '#FFA001',
-                tabBarInactiveTintColor: '#CDCDE0',
+                tabBarActiveTintColor: '#d46bff',
+                tabBarInactiveTintColor: '#FFFFFF',
                 tabBarStyle: {
-                    backgroundColor: '#161622',
+                    backgroundColor: '#191c66',
                     borderTopWidth: 1,
-                    borderTopColor: '#232533',
+                    borderTopColor: '#191c66',
                     height: 64,
                 }
             }}>
@@ -61,7 +58,7 @@ const TabsLayout = () => {
                             <TabIcon
                                 icon={home}
                                 color={color}
-                                name='series'
+                                name='Series'
                                 focused={focused}
                             />
                         )
@@ -76,7 +73,7 @@ const TabsLayout = () => {
                             <TabIcon
                                 icon={home}
                                 color={color}
-                                name='actor'
+                                name='Actores'
                                 focused={focused}
                             />
                         )
@@ -91,7 +88,7 @@ const TabsLayout = () => {
                             <TabIcon
                                 icon={home}
                                 color={color}
-                                name='director'
+                                name='Directores'
                                 focused={focused}
                             />
                         )
@@ -100,13 +97,13 @@ const TabsLayout = () => {
                 <Tabs.Screen
                     name='plataforma'
                     options={{
-                        title: 'Plataforma',
+                        title: 'Plataformas',
                         headerShown: false,
                         tabBarIcon: ({ color, focused }) => (
                             <TabIcon
                                 icon={home}
                                 color={color}
-                                name='plataforma'
+                                name='Sitios'
                                 focused={focused}
                             />
                         )
@@ -121,7 +118,7 @@ const TabsLayout = () => {
                             <TabIcon
                                 icon={home}
                                 color={color}
-                                name='idioma'
+                                name='Idiomas'
                                 focused={focused}
                             />
                         )

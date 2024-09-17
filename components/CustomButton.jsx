@@ -39,5 +39,9 @@ const styles = StyleSheet.create({
         color: 'black',
         fontSize: 20,
         fontWeight: 'bold',
+        backgroundColor: 'white',
+        textAlign: 'center',
+        padding: 15,
+        borderRadius: 50,
     }
 })
