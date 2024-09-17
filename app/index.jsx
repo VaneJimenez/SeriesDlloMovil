@@ -13,7 +13,8 @@ export default function App() {
         style={{ width: '100%', height: '100%' }}
       >
         <ScrollView contentContainerStyle={styles.container}>
-          <CustomButton title='Comenzar' handlePress={() => router.push('(tabs)/home')}
+          <CustomButton title='Comenzar
+          ' handlePress={() => router.push('(tabs)/home')}
             styles={styles.text} />
         </ScrollView>
       </ImageBackground>

@@ -68,6 +68,11 @@ export const UIIcon = createIcon({
   Root: PrimitiveIcon,
 });
 
+interface IIconProps {
+  className?: string;
+}
+
+
 const iconStyle = tva({
   base: 'text-typography-950 fill-none pointer-events-none',
   variants: {
@@ -153,7 +158,7 @@ const createIconUI = ({ ...props }: ParameterTypes) => {
           // @ts-ignore
           ref={ref}
           {...props}
-          className={iconStyle({ size, class: className })}
+          {...(className && { className })}
         />
       );
     }
