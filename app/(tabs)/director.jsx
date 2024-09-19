@@ -25,6 +25,7 @@ const director = () => {
         setApellidoDirector('');
         setFechaNacimiento('');
         setNacionalidad('');
+        fetchDirector();
       }).catch(error => {
         console.log(error)
       })

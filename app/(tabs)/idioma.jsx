@@ -18,6 +18,7 @@ const idioma = () => {
       }).then(() => {
         setNombreIdioma('');
         setIsoCode('');
+        fetchIdioma();
       }).catch(error => {
         console.log(error)
       })
