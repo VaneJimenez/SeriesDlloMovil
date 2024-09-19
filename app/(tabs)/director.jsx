@@ -1,7 +1,8 @@
-import { Text, Button, TextInput, FlatList, ScrollView } from 'react-native'
+import { Text, Button, InputForm, FlatList, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supa'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import InputForm from '../../components/InputForm'
 
 const director = () => {
 
@@ -48,22 +49,22 @@ const director = () => {
       <Text>
         Agregar Director
       </Text>
-      <TextInput
+      <InputForm
         placeholder='NombreDirector'
         value={nombreDirector}
         onChangeText={text => setNombreDirector(text)}
       />
-      <TextInput
+      <InputForm
         placeholder='ApellidoDirector'
         value={apellidoDirector}
         onChangeText={text => setApellidoDirector(text)}
       />
-      <TextInput
+      <InputForm
         placeholder='FechaNacimiento'
         value={fechaNacimiento}
         onChangeText={text => setFechaNacimiento(text)}
       />
-      <TextInput
+      <InputForm
         placeholder='Nacionalidad'
         value={nacionalidad}
         onChangeText={text => setNacionalidad(text)}

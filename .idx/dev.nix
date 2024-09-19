@@ -13,6 +13,9 @@
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
       "msjsdiag.vscode-react-native"
+      "dsznajder.es7-react-js-snippets"
+      "ms-vscode.js-debug"
+      "PKief.material-icon-theme"
     ];
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file

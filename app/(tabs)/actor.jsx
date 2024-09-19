@@ -1,7 +1,8 @@
-import { Text, Button, TextInput, FlatList, ScrollView } from 'react-native'
+import { Text, Button, InputForm, FlatList, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supa'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import InputForm from '../../components/InputForm'
 
 const actor = () => {
 
@@ -12,27 +13,29 @@ const actor = () => {
     const [fechaNacimiento, setFechaNacimiento] = useState('');
     const [nacionalidad, setNacionalidad] = useState('');
 
-    const agregarActor = () => {
+    const agregarActor = async () => {
         if (nombreActor && apellidoActor && fechaNacimiento && nacionalidad) {
-            supabase.from('actor').insert({
+            const { error } = await supabase.from('actor').insert({
                 nombreactor: nombreActor,
                 apellidoactor: apellidoActor,
                 fechanacimiento: fechaNacimiento,
-                nacionalidad: nacionalidad
-            }).then(() => {
-                setNombreActor('');
-                setApellidoActor('');
-                setFechaNacimiento('');
-                setNacionalidad('');
-            }).catch(error => {
-                console.log(error)
-            })
+                nacionalidad: nacionalidad,
+            });
+            if (error) {
+                console.log(error);
+                return;
+            }
+            setNombreActor('');
+            setApellidoActor('');
+            setFechaNacimiento('');
+            setNacionalidad('');
+            fetchActor();
         }
-    }
+    };
 
     useEffect(() => {
         const fetchActor = async () => {
-            const { data, error } = await supabase.from('actor').select('*')
+            const { data, error } = await supabase.from('actor').select()
             if (error) {
                 console.log(error)
                 return;
@@ -48,22 +51,22 @@ const actor = () => {
                 Agregar Actor
             </Text>
 
-            <TextInput
+            <InputForm
                 placeholder='NombreActor'
                 value={nombreActor}
                 onChangeText={text => setNombreActor(text)}
             />
-            <TextInput
+            <InputForm
                 placeholder='ApellidoActor'
                 value={apellidoActor}
                 onChangeText={text => setApellidoActor(text)}
             />
-            <TextInput
+            <InputForm
                 placeholder='FechaNacimiento'
                 value={fechaNacimiento}
                 onChangeText={text => setFechaNacimiento(text)}
             />
-            <TextInput
+            <InputForm
                 placeholder='Nacionalidad'
                 value={nacionalidad}
                 onChangeText={text => setNacionalidad(text)}
